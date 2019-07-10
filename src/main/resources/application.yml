@@ -8,3 +8,7 @@ mybatis:
    mapperLocations: classpath:/mapper/*.xml
 server:
   port: 8103
+
+logging:
+  level:
+    com.crazyang.mapper: DEBUG

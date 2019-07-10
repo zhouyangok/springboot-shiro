@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crazyang.mapper.ProductMapper">
+    <insert id="addProduct" parameterType="com.crazyang.entity.Product">
+        INSERT INTO product
+        ("name","img","information","creatTime")
+        VALUES
+        (#{name},#{img},#{information},#{creatTime})
+    </insert>
+
+    <select id="listProduct" resultType="com.crazyang.entity.Product">
+        SELECT *
+        FROM product
+        ORDER BY id DESC
+    </select>
+
+    <select id="getProductById" resultType="com.crazyang.entity.Product">
+        SELECT *
+        FROM product
+        WHERE id = #{id}
+        ORDER BY id DESC
+    </select>
+
+    <update id="updateProduct" parameterType="com.crazyang.entity.Product">
+        UPDATE product
+         ("name","img","information","creatTime")
+        VALUES
+        (#{name},#{img},#{information},#{creatTime})
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteProduct" parameterType="Integer">
+        DELETE * FROM product
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

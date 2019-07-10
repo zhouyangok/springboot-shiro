@@ -19,7 +19,8 @@ public class ResultController {
 
 
     @RequestMapping("/map")
-    public Map getMap(){
-        return ResultResponse.getData();
+    public ResultResponse getMap(){
+        ResultResponse response = new ResultResponse();
+        return response;
     }
 }
